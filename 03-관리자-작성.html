@@ -1,0 +1,107 @@
+<!-- @pageTitle 관리자-작성 -->
+<!-- @pageCreated 2025-08-03 -->
+<!-- @pageUpdated - -->
+<!-- @pageNote - -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>BX컨설팅</title>
+    <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script>
+    function initMobileMenu() {
+        if (window.innerWidth <= 1000) {
+        document.querySelectorAll('.header-nav > ul > li > a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            e.preventDefault(); // 링크 이동 방지
+            const li = this.parentElement;
+            li.classList.toggle('open');
+            });
+        });
+        }
+    }
+    
+    window.addEventListener('DOMContentLoaded', initMobileMenu);
+    window.addEventListener('resize', () => {
+        // 리사이즈 시 메뉴 초기화
+        document.querySelectorAll('.header-nav li').forEach(li => li.classList.remove('open'));
+        initMobileMenu();
+    });
+    </script>  <script type="module" src="./assets/js/main.js"></script>
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <div class="admin">
+        <div class="admin-header">
+            <h2 class="admin-logo"></h2>
+        </div>
+        <div class="admin-banner">
+            <h1>인사이트</h1>
+        </div>
+        <div class="admin-content">
+            <div class="bo-write">
+                <table>
+                    <colgroup>
+                        <col style="width: 127px;">
+                        <col style="width: auto;">
+                    </colgroup>
+                    <tr>
+                        <th>제목</th>
+                        <td>
+                            <input type="text" class="input" placeholder="제목을 입력해주세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>이미지</th>
+                        <td>
+                            <div class="image-upload">
+                                <div class="image-upload-preview-box">
+                                    <div class="image-upload-preview">
+                                        <img src="./assets/images/90x50.png" alt="">
+                                    </div>
+                                    <span class="image-upload-name">메인이미지_칼럼250728.jpg</span>
+                                    <button type="button" class="image-upload-delete">삭제</button>
+                                </div>
+                                <div class="image-upload-button">
+                                    <input type="file">
+                                    <button class="image-upload-button-text">이미지 찾아보기</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>출처</th>
+                        <td>
+                            <textarea name="" id="" class="input small">Lee, J. S., & Cho, H. Y. (2025). Navigating impressions: the impact of luxury social media posts. Journal of Fashion Marketing 
+                                and Management: An International Journal, 29(1), 164-179.
+                                Lee, J. S., & Cho, H. Y. (2025). Navigating impressions: the impact of luxury social media posts. Journal of Fashion Marketing </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>내용</th>
+                        <td>
+                            <textarea name="" id="" class="input"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div class="action-fab">
+                    <div class="l">
+                        <a href="#" class="admin-btn2">미리보기</a>
+                        <a href="#" class="admin-btn">등록하기</a>
+                    </div>
+                    <div class="r">
+                        <a href="#" class="admin-btn">목록</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

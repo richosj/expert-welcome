@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>BX컨설팅</title>
+    <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script>
+    function initMobileMenu() {
+        if (window.innerWidth <= 1000) {
+        document.querySelectorAll('.header-nav > ul > li > a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            e.preventDefault(); // 링크 이동 방지
+            const li = this.parentElement;
+            li.classList.toggle('open');
+            });
+        });
+        }
+    }
+    
+    window.addEventListener('DOMContentLoaded', initMobileMenu);
+    window.addEventListener('resize', () => {
+        // 리사이즈 시 메뉴 초기화
+        document.querySelectorAll('.header-nav li').forEach(li => li.classList.remove('open'));
+        initMobileMenu();
+    });
+    </script>    <style>
+        @font-face {
+            font-family: 'ChosunGu';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+  <script type="module" src="./assets/js/main.js"></script>
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <style>
+        body{
+            padding-top: 3rem;
+            font-family: 'ChosunGu';
+        }
+        table{
+            border-collapse: collapse;
+            background: white;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+        }
+        table thead tr{background-color: #f8f8f8;}
+        table thead th{
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.2;
+            font-weight: 500;
+        }
+        table td:first-child{
+            text-decoration: underline;
+        }
+        table td, table th {
+            border: 1px solid #ddd;   
+            padding: 7px 10px;
+            white-space: nowrap;
+            font-size: 16px;
+        }
+        
+        
+        .link-page{
+            margin: 0 auto;
+            width: 1200px;
+        }
+        h1{
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+        .search-box {
+            width: 100%;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .search-box input {
+            padding: 0.8rem 1rem;
+            width: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1.4rem;
+        }
+        .search-box button {
+            margin-left: 1rem;
+            padding: 0.8rem 1.5rem;
+            background-color: #36304a;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.6rem;
+            color: #555;
+            display: none;
+        }
+    </style>
+    <h1>엑스퍼트 - 인사이트</h1>
+    
+    <div class="link-page">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
+            <button id="searchButton">검색</button>
+              <script>
+                const shareBtn = document.getElementById('share-btn');
+
+                // OS & 브라우저 감지 함수
+                function detectEnvironment() {
+                const ua = navigator.userAgent.toLowerCase();
+                const isWindows = navigator.platform.startsWith('Win');
+                const isMac = navigator.platform.startsWith('Mac');
+                const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+                const isChrome = ua.includes('chrome') && !ua.includes('edg');
+                const isEdge = ua.includes('edg');
+                const isFirefox = ua.includes('firefox');
+
+                return { isWindows, isMac, isSafari, isChrome, isEdge, isFirefox };
+                }
+
+                shareBtn.addEventListener('click', async () => {
+                const { isWindows, isMac, isSafari, isChrome, isEdge } = detectEnvironment();
+
+                if (navigator.share) {
+                    try {
+                    await navigator.share({
+                        title: '공유 제목',
+                        text: '공유할 내용',
+                        url: 'https://happybean.naver.com'
+                    });
+                    console.log('공유 성공');
+                    } catch (err) {
+                    console.warn('공유 실패', err);
+                    }
+                } else {
+                    // 환경별 안내
+                    if (isWindows) {
+                    alert('이 브라우저는 공유 기능을 지원하지 않아. Chrome 최신버전이나 모바일 기기에서 시도해봐.');
+                    } else if (isMac && isSafari) {
+                    alert('Safari는 공유 기능을 지원하지만 현재 사용 중인 Safari 버전이 안 맞을 수 있어.');
+                    } else if (isMac && !isSafari) {
+                    alert('macOS에서는 Safari에서만 공유 기능이 제대로 작동해.');
+                    } else {
+                    alert('이 환경에서는 공유 기능을 지원하지 않아.');
+                    }
+
+                    // 복사 대안
+                    const url = 'https://happybean.naver.com';
+                    try {
+                    await navigator.clipboard.writeText(url);
+                    alert('공유할 링크가 클립보드에 복사됐어:\n' + url);
+                    } catch {
+                    alert('링크 복사도 실패했어. 수동으로 복사해:\n' + url);
+                    }
+                }
+                });
+
+
+              </script>
+              
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>파일</th>
+                    <th>페이지명</th>
+                    <th>생성일</th>
+                    <th>수정일</th>
+                    <th>비고</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <tr>
+                    <td><a href="./00-메인.html" target="_blank">00-메인.html</a></td>
+                    <td>메인</td>
+                    <td>2025-08-03</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./01-로그인.html" target="_blank">01-로그인.html</a></td>
+                    <td>로그인</td>
+                    <td>2025-08-03</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./02-관리자-목록.html" target="_blank">02-관리자-목록.html</a></td>
+                    <td>관리자 목록</td>
+                    <td>2025-08-03</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./03-관리자-작성.html" target="_blank">03-관리자-작성.html</a></td>
+                    <td>관리자-작성</td>
+                    <td>2025-08-03</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./04-관리자-수정.html" target="_blank">04-관리자-수정.html</a></td>
+                    <td>관리자-수정</td>
+                    <td>2025-08-04</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./05-인사이트-목록.html" target="_blank">05-인사이트-목록.html</a></td>
+                    <td>인사이트-목록</td>
+                    <td>2025-08-04</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./06-인사이트-상세.html" target="_blank">06-인사이트-상세.html</a></td>
+                    <td>인사이트-상세</td>
+                    <td>2025-08-04</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./07-인사이트-서비스.html" target="_blank">07-인사이트-서비스.html</a></td>
+                    <td>인사이트-경영전략 솔루션</td>
+                    <td>2025-08-04</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./08-인사이트-서비스.html" target="_blank">08-인사이트-서비스.html</a></td>
+                    <td>인사이트-영업&amp;마케팅 솔루션</td>
+                    <td>2025-08-04</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./09-인사이트-서비스.html" target="_blank">09-인사이트-서비스.html</a></td>
+                    <td>인사이트-고객경험(CX) 솔루션 CX</td>
+                    <td>2025-08-05</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./10-인사이트-서비스.html" target="_blank">10-인사이트-서비스.html</a></td>
+                    <td>인사이트-인사조직(HR) 솔루션</td>
+                    <td>2025-08-05</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./11-인사이트-서비스.html" target="_blank">11-인사이트-서비스.html</a></td>
+                    <td>인사이트-리서치(Research) 솔루션 Research</td>
+                    <td>2025-08-05</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./12-인사이트-서비스.html" target="_blank">12-인사이트-서비스.html</a></td>
+                    <td>인사이트-고객경험(CX) 솔루션 CX</td>
+                    <td>2025-08-05</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./13-포트폴리오.html" target="_blank">13-포트폴리오.html</a></td>
+                    <td>포트폴리오</td>
+                    <td>2025-08-14</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./14-회사소개-VMC.html" target="_blank">14-회사소개-VMC.html</a></td>
+                    <td>회사소개</td>
+                    <td>2025-08-14</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td><a href="./15-회사소개-NETWORK.html" target="_blank">15-회사소개-NETWORK.html</a></td>
+                    <td>회사소개</td>
+                    <td>2025-08-14</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="no-results" id="noResults">검색 결과가 없습니다.</div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const tableBody = document.getElementById('tableBody');
+            const noResults = document.getElementById('noResults');
+            const rows = tableBody.querySelectorAll('tr');
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase();
+                let resultsFound = false;
+                
+                rows.forEach(row => {
+                    const text = row.textContent.toLowerCase();
+                    if (text.includes(searchTerm)) {
+                        row.style.display = '';
+                        resultsFound = true;
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+                
+                if (resultsFound) {
+                    noResults.style.display = 'none';
+                } else {
+                    noResults.style.display = 'block';
+                }
+            }
+            
+            searchButton.addEventListener('click', performSearch);
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

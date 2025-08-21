@@ -1,0 +1,143 @@
+<!-- @pageTitle 회사소개 -->
+<!-- @pageCreated 2025-08-14 -->
+<!-- @pageUpdated - -->
+<!-- @pageNote - -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>BX컨설팅</title>
+    <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script>
+    function initMobileMenu() {
+        if (window.innerWidth <= 1000) {
+        document.querySelectorAll('.header-nav > ul > li > a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            e.preventDefault(); // 링크 이동 방지
+            const li = this.parentElement;
+            li.classList.toggle('open');
+            });
+        });
+        }
+    }
+    
+    window.addEventListener('DOMContentLoaded', initMobileMenu);
+    window.addEventListener('resize', () => {
+        // 리사이즈 시 메뉴 초기화
+        document.querySelectorAll('.header-nav li').forEach(li => li.classList.remove('open'));
+        initMobileMenu();
+    });
+    </script>  <script type="module" src="./assets/js/main.js"></script>
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="header" id="header">
+            <div class="header-container">
+                <div class="header-logo">
+                    <a href="/"></a>
+                </div>
+                <nav class="header-nav">
+                    <ul>
+                        <li><a href="#">서비스</a>
+                            <div class="depth">
+                                <div class="depth-item">
+                                    <a href="#">경영전략솔루션</a>
+                                    <a href="#">영업/마케팅</a>
+                                    <a href="#">서비스(CX)</a>
+                                    <a href="#">인사조직</a>
+                                    <a href="#">리서치</a>
+                                    <a href="#">시스템(SaaS)</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">인사이트</a>
+                            <div class="depth">
+                                <div class="depth-item">
+                                    <a href="#">레터</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">포트폴리오</a>
+                            <div class="depth">
+                                <div class="depth-item">
+                                    <a href="#">수행사례</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">회사소개</a>
+                            <div class="depth">
+                                <div class="depth-item end">
+                                    <a href="#">VMC</a>
+                                    <a href="#">Network</a>
+        
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+        
+                <div class="hamburger" id="hamburger">
+                    <span class="line line1"></span>
+                    <span class="line line2"></span>
+                    <span class="line line3"></span>
+                </div>
+                
+            </div>
+            <div class="header-bg"></div>
+        </header>
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            });
+        </script>
+        <section class="banner bg4">
+            <h1 class="banner-title">회사소개</h1>
+        </section>
+        
+        <main class="main">
+            <div class="container">
+                <div class="about">
+                    <div class="summary">
+                        <h2>NETWORK</h2>
+                    </div>
+
+                    <div class="about-grid">
+                        <div class="about-grid-item">
+                            <div class="about-grid-logo"><img src="./assets/images/n-1.png" alt=""></div>
+                            <div class="about-grid-body">
+                                <div class="about-grid-body-title">HRM&HRD Partner</div>
+                                <div class="about-grid-body-desc">
+                                    국내 최대 규모의 기업교육회사이며,<br>
+                                    인사/조직/교육/채용 관련 솔루션 및 교육운영 전문 파트너사<br>
+                                    “컨설팅 결과의 체계적인 ‘내재화’를 지원합니다.”
+                                </div>
+                            </div>
+                        </div>
+                        <div class="about-grid-item">
+                            <div class="about-grid-logo"><img src="./assets/images/n-2.png" alt=""></div>
+                            <div class="about-grid-body">
+                                <div class="about-grid-body-title">Research Partner</div>
+                                <div class="about-grid-body-desc">
+                                    80만 패널을 운영하는 조사회사이며,<br>
+                                    금융/자동차/관광/통신/공공 분야 전문 리서치 파트너사<br>
+                                    “빠르고 정확한 ‘고객조사 및 데이터 분석’을 지원합니다.”
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </main>
+        
+    </div>
+</body>
+</html>
