@@ -1,0 +1,81 @@
+<!-- @pageTitle 관리자-작성 -->
+<!-- @pageCreated 2025-08-03 -->
+<!-- @pageUpdated - -->
+<!-- @pageNote - -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    {{> meta}}
+</head>
+
+<body>
+    <div class="admin">
+        <div class="admin-header">
+            <h2 class="admin-logo"></h2>
+        </div>
+        <div class="admin-banner">
+            <h1>인사이트</h1>
+        </div>
+        <div class="admin-content">
+            <div class="bo-write">
+                <table>
+                    <colgroup>
+                        <col style="width: 127px;">
+                        <col style="width: auto;">
+                    </colgroup>
+                    <tr>
+                        <th>제목</th>
+                        <td>
+                            <input type="text" class="input" placeholder="제목을 입력해주세요.">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>이미지</th>
+                        <td>
+                            <div class="image-upload">
+                                <div class="image-upload-preview-box">
+                                    <div class="image-upload-preview">
+                                        <img src="/assets/images/90x50.png" alt="">
+                                    </div>
+                                    <span class="image-upload-name">메인이미지_칼럼250728.jpg</span>
+                                    <button type="button" class="image-upload-delete">삭제</button>
+                                </div>
+                                <div class="image-upload-button">
+                                    <input type="file">
+                                    <button class="image-upload-button-text">이미지 찾아보기</button>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>출처</th>
+                        <td>
+                            <textarea name="" id="" class="input small">Lee, J. S., & Cho, H. Y. (2025). Navigating impressions: the impact of luxury social media posts. Journal of Fashion Marketing 
+                                and Management: An International Journal, 29(1), 164-179.
+                                Lee, J. S., & Cho, H. Y. (2025). Navigating impressions: the impact of luxury social media posts. Journal of Fashion Marketing </textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>내용</th>
+                        <td>
+                            <textarea name="" id="" class="input"></textarea>
+                        </td>
+                    </tr>
+                </table>
+                <div class="action-fab">
+                    <div class="l">
+                        <a href="#" class="admin-btn2">미리보기</a>
+                        <a href="#" class="admin-btn">등록하기</a>
+                    </div>
+                    <div class="r">
+                        <a href="#" class="admin-btn">목록</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

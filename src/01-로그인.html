@@ -1,0 +1,48 @@
+<!-- @pageTitle 로그인 -->
+<!-- @pageCreated 2025-08-03 -->
+<!-- @pageUpdated - -->
+<!-- @pageNote - -->
+
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    {{> meta}}
+</head>
+
+<body>
+    <div id="login" class="login">
+        <div class="login-logo">
+            <img src="/assets/images/login-logo.png" alt="">
+        </div>
+        <div class="login-container">
+            <div class="login-image"><img src="/assets/images/login-image.png" alt=""></div>
+
+            <div class="login-form">
+                <div class="login-form-title">
+                    <h2>LOG-IN</h2>
+                </div>
+
+                <div class="login-form-input">
+                    <div class="labels">User name</div>
+                    <input type="text" placeholder="Enter your User name">
+                </div>
+
+                <div class="login-form-input">
+                    <div class="labels">Password</div>
+                    <input type="password" placeholder="Enter your Password">
+                </div>
+                <div class="login-form-checkbox">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Rememebr me</label>
+                </div>
+                <div class="login-form-button">
+                    <button type="submit">Login</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
