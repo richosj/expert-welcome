@@ -1,0 +1,109 @@
+<!-- @pageTitle 만족도 조사 상세 -->
+<!-- @pageCreated 2025-08-21 -->
+<!-- @pageUpdated - -->
+<!-- @pageNote - -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    {{> meta}}
+</head>
+
+<body>
+    <div id="wrap" class="survey-detail-page">
+        <header class="page-header">
+            <button class="menu-btn"></button>
+            <h1 class="page-title">만족도 조사</h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="container">
+                <p class="instruction-text">참여했던 오후 세션을 선택 후 만족도를 평가해주세요. <br>(다른 세션 참석시, 해당 세션을 선택해주세요.)</p>
+                
+                <div class="survey-items">
+                    <!-- 첫 번째 항목 -->
+                    <div class="survey-item fir">
+                        <div class="item-header">
+                            <input type="radio" name="session" id="session1" class="radio-btn">
+                            <label for="session1" class="item-title">
+                                고객경험 분석 기반 세일즈/CX 컨설팅<br>
+                                : 은행, 통신사 사례 [박준호 대표, 비엑스컨설팅]
+                            </label>
+                        </div>
+                        <div class="satisfaction-scale">
+                            <div class="scale-bar"></div>
+                            <div class="scale-labels">
+                                <span>매우불만족</span>
+                                <span>불만족</span>
+                                <span>보통</span>
+                                <span>만족</span>
+                                <span>매우만족</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 두 번째 항목 -->
+                    <div class="survey-item">
+                        <div class="item-header">
+                            <input type="radio" name="session" id="session2" class="radio-btn">
+                            <label for="session2" class="item-title">
+                                과/차장급 시니어 직원들의 열정을 다시 켜다. 온(溫)워크
+                                (정재이 소장, 엑스퍼트컨설팅)
+                            </label>
+                        </div>
+                        
+                    </div>
+                    
+                    <!-- 세 번째 항목 -->
+                    <div class="survey-item">
+                        <div class="item-header">
+                            <input type="radio" name="session" id="session3" class="radio-btn">
+                            <label for="session3" class="item-title">
+                                제5회 인재채용 실태조사 결과발표
+                                <br>
+                                (이승우 본부장, 엑스퍼트컨설팅)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- 네 번째 항목 -->
+                    <div class="survey-item">
+                        <div class="item-header">
+                            <input type="radio" name="session" id="session4" class="radio-btn">
+                            <label for="session4" class="item-title">
+                                AX 시대의 인재 육성 전략
+                                <br>
+                                (이윤수 교수, 한양대학교)
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- 다섯 번째 항목 -->
+                    <div class="survey-item">
+                        <div class="item-header">
+                            <input type="radio" name="session" id="session5" class="radio-btn">
+                            <label for="session5" class="item-title">
+                                공공조직 맞춤형 AI 기반 팀장 리더십 프로그램
+                                <br>
+                                (양소영 팀장, 엑스퍼트컨설팅)
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="feedback-section">
+                    <label for="feedback" class="feedback-label">기타 의견이 있으시다면 자유롭게 남겨주세요.</label>
+                    <textarea id= "feedback" class="feedback-textarea" placeholder="의견을 입력해주세요..."></textarea>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer id="footer">
+        <div class="footer-container">
+            <a href="tel:02-2152-3978" class="footer-link">02) 2152-3978</a>
+            <div class="footer-logo"></div>
+        </div>
+    </footer>
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

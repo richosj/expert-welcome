@@ -1,0 +1,93 @@
+
+// 브랜딩 섹션 (메인 페이지용)
+.main-page .branding-section {
+    padding-top: 5rem;
+    .company-name {
+        font-size: 1.6rem;
+        font-weight: 400;
+        color: #fff;
+        margin: 0 0 2rem 0;
+    }
+    
+    .event-title {
+        font-size: 3.2rem;
+        color: #ffffff;
+    }
+    
+    .event-subtitle {
+        font-size: 2.8rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin: 0;
+        letter-spacing: 0.01em;
+    }
+}
+.main-page{
+    .divider{
+        margin: 3rem 0;
+    }
+}
+
+// 환영 섹션
+
+.welcome-message {
+    font-size: 1.2rem;
+    color: rgba(210, 157, 255, 1);
+    font-weight: 700;
+    text-align: center;
+}
+
+// 주요 액션 버튼들
+.primary-actions {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    
+    .action-btn.primary {
+        width: 100%;
+        height: 50px;
+        border: none;
+        border-radius: 5px;
+        color: rgba(127, 40, 200, 1);
+        font-size: 2rem;
+        font-weight: 700;
+        cursor: pointer;
+        backdrop-filter: blur(4px);
+        background: rgba(255, 202, 243, 1);
+        &.sp{
+            color: #fff;
+            background: rgba(208, 56, 173, 1);
+        }
+    }
+}
+
+// 행사 안내 섹션
+.event-info-section {
+    margin-top: 4rem;
+    .section-title {
+        font-size: 1.6rem;
+        color: rgba(210, 157, 255, 1);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 1rem;
+        line-height: 30px;
+    }
+    
+    .secondary-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+        
+        .action-btn.secondary {
+            width: 100%;
+            height: 50px;
+            border-radius: 5px;
+            border: 1px solid rgba(197, 172, 255, .3);
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            background: rgba(44, 49, 62, 1);
+        }
+    }
+}

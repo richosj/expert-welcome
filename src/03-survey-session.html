@@ -1,0 +1,43 @@
+<!-- @pageTitle 만족도 조사 세션 선택 -->
+<!-- @pageCreated 2025-08-21 -->
+<!-- @pageUpdated - -->
+<!-- @pageNote - -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    {{> meta}}
+</head>
+
+<body>
+    <div id="wrap" class="survey-page">
+        
+        <header class="page-header">
+            <button class="menu-btn"></button>
+            <h1 class="page-title">만족도 조사</h1>
+        </header>
+
+        <main class="main-content container">
+            <div class="divider">
+                <div class="divider-dot"></div>
+            </div>
+            <div class="session-buttons">
+                <button class="session-btn">오전 세션 만족도 조사</button>
+                <button class="session-btn">오후 13:30 세션 만족도 조사</button>
+                <button class="session-btn">오후 14:40 세션 만족도 조사</button>
+                <button class="session-btn" disabled>오후 15:50 세션 만족도 조사</button>
+            </div>
+            
+            <p class="info-text">강의 종료 15분 전 만족도 조사가 시작됩니다.</p>
+        </main>
+    </div>
+    <footer id="footer">
+        <div class="footer-container">
+            <a href="tel:02-2152-3978" class="footer-link">02) 2152-3978</a>
+            <div class="footer-logo"></div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,238 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/functions" as *;
+@use "../abstracts/mixins" as *;
+:root{
+    --width: 768px;
+    --gap: 33px;
+}
+body,html{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background:#111 url('@/assets/images/bg.png') no-repeat center top / 100% auto;
+    &:has(.login){
+        background-image: url('@/assets/images/login-bg.png');
+    }
+    &:has(.main-page){
+        background-image: url('@/assets/images/main-bg.png');
+    }
+}
+
+#footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 100;
+    .footer-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem;
+    }
+    .footer-link{
+        font-size: 17px;
+        font-weight: 900;
+        color: #fff;
+        padding-left:26px;
+        background: url('@/assets/images/footer-tel.png') no-repeat left center;
+    }
+    .footer-logo{
+        width: 68px;
+        height: 17px;
+        background: url('@/assets/images/footer-logo.png') no-repeat center center;
+    }
+}
+
+.container{
+    max-width: var(--width);
+    margin: 0 auto;
+    padding: 0 var(--gap);
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0;
+    
+    .ek-logo {
+        width: 32px;
+        height: 32px;
+        background: #ff69b4;
+        color: #ffffff;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+    }
+    
+    .menu-text {
+        font-size: 0.7rem;
+        color: #ffffff;
+        font-weight: 400;
+    }
+    
+    &:hover {
+        .ek-logo {
+            background: #ff7eb8;
+            transform: scale(1.05);
+        }
+    }
+}
+
+.page-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+
+
+
+// 헤더 스타일
+.page-header {
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 0 30px;
+    .menu-btn {
+        width: 48px;
+        height: 48px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        background: url('@/assets/images/menu-btn.png') no-repeat center center;
+    }
+    
+    .page-title {
+        font-family: SUIT;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 30px;
+        text-align: center;
+        color: rgba(210, 157, 255, 1);
+    }
+}
+
+ 
+
+// 레이어 헤더
+.layer-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid #e9ecef;
+    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    
+    .back-btn {
+        width: 40px;
+        height: 40px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #333333;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        
+        &:hover {
+            background: #f8f9fa;
+            color: #ff69b4;
+        }
+    }
+    
+    .layer-title {
+        flex: 1;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333333;
+        margin: 0 0 0 1rem;
+        text-align: center;
+    }
+}
+
+// 과정 목록
+.course-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+}
+
+// 과정 카테고리
+.course-category {
+    border-bottom: 1px solid #f0f0f0;
+    
+    .category-title {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: #333333;
+        margin: 0;
+        padding: 1.2rem 1.5rem 0.8rem 1.5rem;
+        background: #f8f9fa;
+    }
+    
+    .course-items {
+        padding: 0;
+    }
+}
+
+// 과정 아이템
+.course-item {
+    padding: 1rem 1.5rem 1rem 2.5rem;
+    font-size: 1rem;
+    color: #333333;
+    border-bottom: 1px solid #f0f0f0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    
+    &:hover {
+        background: #f8f9fa;
+    }
+    
+    &.selected {
+        background: #f0e6ff;
+        color: #8a2be2;
+        font-weight: 500;
+    }
+    
+    &:last-child {
+        border-bottom: none;
+    }
+}
+
+// 과정 선택 필드 클릭 이벤트 스타일
+.select-field {
+    &.active {
+        border-color: #ff69b4;
+        background: #ffffff;
+        
+        .arrow-icon {
+            transform: rotate(90deg);
+            color: #ff69b4;
+        }
+    }
+}

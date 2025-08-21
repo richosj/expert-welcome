@@ -1,0 +1,71 @@
+
+// 이벤트 안내 페이지 스타일
+.event-info-page {}
+
+
+// 이벤트 카드 컨테이너
+.event-info-page .main-content {
+    .divider{
+        margin-bottom: 6rem;
+    }
+}
+
+.event-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+// 이벤트 카드
+.event-card {
+    background: #ffffff;
+    border-radius: 5px;
+    padding: 1.5rem;
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    .card-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .event-title {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 3rem;
+        color: rgba(34, 34, 34, 1);
+        
+    }
+    
+    .event-details {
+        li {
+            font-size: 1.4rem;
+            color: #666666;
+            line-height: 1.4;
+            position: relative;
+            padding-left: 1rem;
+            
+            &::before {
+                content: "•";
+                position: absolute;
+                left: 0;
+                color: #111;
+                font-weight: bold;
+            }
+        }
+    }
+    
+    .participate-btn {
+        background: rgba(63, 74, 87, 1);
+        color: #ffffff;
+        border: none;
+        height: 28px;
+        width: 73px;
+        font-size: 1.4rem;
+        font-weight: 600;
+    }
+}
