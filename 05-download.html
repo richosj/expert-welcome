@@ -6,7 +6,34 @@
 <html lang="ko">
 
 <head>
-    {{> meta}}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>BX컨설팅</title>
+    <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script>
+    function initMobileMenu() {
+        if (window.innerWidth <= 1000) {
+        document.querySelectorAll('.header-nav > ul > li > a').forEach(link => {
+            link.addEventListener('click', function (e) {
+            e.preventDefault(); // 링크 이동 방지
+            const li = this.parentElement;
+            li.classList.toggle('open');
+            });
+        });
+        }
+    }
+    
+    window.addEventListener('DOMContentLoaded', initMobileMenu);
+    window.addEventListener('resize', () => {
+        // 리사이즈 시 메뉴 초기화
+        document.querySelectorAll('.header-nav li').forEach(li => li.classList.remove('open'));
+        initMobileMenu();
+    });
+    </script>  <script type="module" src="./assets/js/main.js"></script>
+  <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
@@ -69,6 +96,5 @@
             <div class="footer-logo"></div>
         </div>
     </footer>
-    <script type="module" src="./js/main.js"></script>
 </body>
 </html>
