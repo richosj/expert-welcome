@@ -1,4 +1,4 @@
-/* Responsive Design Variables */
+@import "/fonts/SUIT.css";
 :root {
   /* Breakpoints */
   --mobile: 320px;
@@ -13,6 +13,5 @@
   --container-xl: 1140px;
   
   /* Typography */
-  --font-family-primary: "Pretendard GOV Variable", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;  ;
-
+  --font-family-primary: "SUIT", "Pretendard GOV", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;  ;
 }

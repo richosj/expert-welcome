@@ -5,11 +5,10 @@
 @use "base/root";
 @use "base/reset";
 
-@use "pages/admin";
-@use "pages/insite-layout";
-@use "pages/insite-list";
-@use "pages/insite-detail";
-@use "pages/instie-service";
-@use "pages/insite-home";
-@use "pages/portfolio";
-@use "pages/about";
+@use "pages/layout";
+@use "pages/login";
+@use "pages/main";
+@use "pages/inquiry";
+@use "pages/survey";
+@use "pages/download";
+@use "pages/event";

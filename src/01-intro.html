@@ -1,0 +1,49 @@
+<!-- @pageTitle 로그인 -->
+<!-- @pageCreated 2025-08-21 -->
+<!-- @pageUpdated - -->
+<!-- @pageNote - -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    {{> meta}}
+</head>
+
+<body>
+    <div id="login" class="login">
+        <div class="login-container">
+            <!-- 상단 브랜딩 섹션 -->
+            <div class="branding-section">
+                <h1 class="company-name">엑스퍼트컨설팅</h1>
+                <h2 class="event-title">2025 <b>HR FAIR</b></h2>
+                <h3 class="event-subtitle">Hi-AI</h3>
+            </div>
+            
+            <!-- 중간 네비게이션 섹션 -->
+            <div class="divider">
+                <div class="divider-dot"></div>
+            </div>
+
+            <p class="guide-text">참가 가이드</p>
+            
+            <!-- 하단 로그인 폼 섹션 -->
+            <div class="login-form-section">
+                <div class="input-group">
+                    <input type="tel" class="phone-input" placeholder="휴대폰 번호" maxlength="11">
+                </div>
+                <button type="button" class="login-btn">로그인</button>
+                <p class="error-note">로그인 오류 시 아래 전화번호로 문의하세요.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <a href="tel:02-2152-3978" class="footer-link">02) 2152-3978</a>
+            <div class="footer-logo"></div>
+        </div>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+</body>
+</html>
