@@ -9,51 +9,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>BX컨설팅</title>
-    <link rel="stylesheet" as="style" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-gov-dynamic-subset.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <script>
-    function initMobileMenu() {
-        if (window.innerWidth <= 1000) {
-        document.querySelectorAll('.header-nav > ul > li > a').forEach(link => {
-            link.addEventListener('click', function (e) {
-            e.preventDefault(); // 링크 이동 방지
-            const li = this.parentElement;
-            li.classList.toggle('open');
-            });
-        });
-        }
-    }
-    
-    window.addEventListener('DOMContentLoaded', initMobileMenu);
-    window.addEventListener('resize', () => {
-        // 리사이즈 시 메뉴 초기화
-        document.querySelectorAll('.header-nav li').forEach(li => li.classList.remove('open'));
-        initMobileMenu();
-    });
-    </script>  <script type="module" src="./assets/js/main.js"></script>
+    <title>환영</title>
+  <script type="module" src="./assets/js/main.js"></script>
   <link rel="stylesheet" href="./assets/css/main.css">
 </head>
 
 <body>
+    <div id="wrap">
     <div id="login" class="login">
+        <div class="obj1"><img src="./assets/images/obj1.png" alt=""></div>
+        <div class="obj2"><img src="./assets/images/obj2.png" alt=""></div>
+        <div class="obj3"><img src="./assets/images/obj3.png" alt=""></div>
+
         <div class="login-container">
-            <!-- 상단 브랜딩 섹션 -->
             <div class="branding-section">
                 <h1 class="company-name">엑스퍼트컨설팅</h1>
                 <h2 class="event-title">2025 <b>HR FAIR</b></h2>
                 <h3 class="event-subtitle">Hi-AI</h3>
             </div>
-            
-            <!-- 중간 네비게이션 섹션 -->
             <div class="divider">
                 <div class="divider-dot"></div>
             </div>
 
             <p class="guide-text">참가 가이드</p>
             
-            <!-- 하단 로그인 폼 섹션 -->
             <div class="login-form-section">
                 <div class="input-group">
                     <input type="tel" class="phone-input" placeholder="휴대폰 번호" maxlength="11">
@@ -63,13 +42,12 @@
             </div>
         </div>
     </div>
-
+    </div>
     <footer id="footer">
         <div class="footer-container">
             <a href="tel:02-2152-3978" class="footer-link">02) 2152-3978</a>
             <div class="footer-logo"></div>
         </div>
     </footer>
-
 </body>
 </html>

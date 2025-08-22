@@ -1,0 +1,112 @@
+<!-- @pageTitle 알림 팝업창 목록!! -->
+<!-- @pageCreated 2025-08-21 -->
+<!-- @pageUpdated - -->
+<!-- @pageNote 테스트 버튼을 누르면 나옵니다 -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>환영</title>
+  <script type="module" src="./assets/js/main.js"></script>
+  <link rel="stylesheet" href="./assets/css/main.css">
+</head>
+
+<body>
+    <div id="wrap" class="survey-page">
+        <header class="page-header">
+            <a href="#" class="menu-btn"></a>
+            <h1 class="page-title">솔루션문의</h1>
+            <div class="progress-dot"></div>
+        </header>
+        <main class="main-content container">
+            <div class="divider">
+                <div class="divider-dot"></div>
+            </div>
+            <div class="session-buttons">
+                <button type="button" class="called-btn" data-complete="complete-1" style="color: #fff;">
+                    결과 테스트 호출1
+                </button>
+                <button type="button" class="called-btn" data-complete="complete-2" style="color: #fff;">
+                    결과 테스트 호출2   
+                </button>
+                <button type="button" class="called-btn" data-complete="complete-3" style="color: #fff;">
+                    결과 테스트 호출3
+                </button>
+            </div>
+            
+            <p class="info-text">강의 종료 15분 전 만족도 조사가 시작됩니다.</p>
+        </main>
+    </div>
+    <footer id="footer">
+        <div class="footer-container">
+            <a href="tel:02-2152-3978" class="footer-link">02) 2152-3978</a>
+            <div class="footer-logo"></div>
+        </div>
+    </footer>    <div class="complete size-1 bgcolor-1" id="complete-1">
+        <div class="complete-container">
+            <div class="text-box">
+                1:1문의가<br>
+                접수되었습니다.
+            </div>
+        </div>
+    </div>
+    <div class="complete size-2 bgcolor-1" id="complete-2">
+        <div class="complete-container">
+            <div class="text-box">
+                만족도 조사가<br>
+                완료 되었습니다. <br>
+                다음 세션 종료 후<br>
+                다시 도전해보세요.
+            </div>
+        </div>
+    </div>
+    <div class="complete size-2 bgcolor-2" id="complete-3">
+        <div class="complete-container">
+            <div class="fire">
+                <img src="./assets/images/fire.png" alt="gift">
+            </div>
+            <div class="icon-box">
+                <img src="./assets/images/firworks.png" alt="gift">
+            </div>
+            <div class="text-box">
+                당첨을 축하합니다!<br>
+                인포메이션에서<br>
+                선물을 수령하세요.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const calledBtns = document.querySelectorAll('.called-btn');
+        const completeItems = document.querySelectorAll('.complete');
+
+        calledBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const completeId = btn.getAttribute('data-complete');
+                showComplete(completeId);
+            });
+        });
+
+        function showComplete(completeId) {
+            completeItems.forEach(item => {
+                item.classList.remove('active');
+            });
+            const completeItem = document.getElementById(completeId);
+            if (completeItem) {
+                completeItem.classList.add('active');
+            }
+        }
+
+        function hideComplete() {
+            completeItems.forEach(item => {
+                item.classList.remove('active');
+            });
+        }
+    </script>
+
+
+</body>
+</html>
