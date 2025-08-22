@@ -1,5 +1,19 @@
 
 // 브랜딩 섹션 (메인 페이지용)
+.main-page{
+    .obj1{
+        left: 0;
+        top: 0;
+    }
+    .obj2{
+        left:107px;
+        top: 12px;
+    }
+    .obj3{
+        right: -35px;
+        top: 13px;
+    }
+}
 .main-page .branding-section {
     padding-top: 5rem;
     .company-name {

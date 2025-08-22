@@ -1,15 +1,32 @@
 
 // 로그인 페이지 스타일
+.obj1,.obj2,.obj3{
+    position: absolute;
+    z-index: -1;
+}
 .login {   
     display: flex;
-justify-content: center;
-position: relative;
-overflow: hidden;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 5rem;
+    .obj1{
+        left: 0;
+        top: 0;
+    }
+    .obj2{
+        left:107px;
+        top: 12px;
+    }
+    .obj3{
+        right: 0px;
+        top: 100px;
+    }
 }
 .login-container {
 width: 100%;
 max-width: var(--width);
-padding: 2rem;
+padding: 0 2rem;
 position: relative;
 z-index: 2;
 

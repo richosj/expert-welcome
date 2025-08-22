@@ -11,12 +11,7 @@
 
 <body>
     <div id="wrap" class="download-page">
-        <header class="page-header">
-            <button class="menu-btn"></button>
-            <h1 class="page-title">교재 다운로드</h1>
-        </header>
-        
-        <!-- 메인 컨텐츠 -->
+        {{> header}}
         <main class="main-content container">
             <div class="divider">
                 <div class="divider-dot"></div>
@@ -63,12 +58,7 @@
             <p class="info-text">교재는 강의 시작 후 다운로드 가능합니다.</p>
         </main>
     </div>
-    <footer id="footer">
-        <div class="footer-container">
-            <a href="tel:02-2152-3978" class="footer-link">02) 2152-3978</a>
-            <div class="footer-logo"></div>
-        </div>
-    </footer>
+    {{> footer}}
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

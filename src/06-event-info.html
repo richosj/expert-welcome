@@ -12,11 +12,8 @@
 <body>
     <div id="wrap" class="event-info-page">
         
-        <header class="page-header">
-            <button class="menu-btn"></button>
-            <h1 class="page-title">이벤트</h1>
-        </header>
-        <!-- 메인 컨텐츠 -->
+        {{> header}}
+
         <main class="main-content container">
             <div class="divider">
                 <div class="divider-dot"></div>
@@ -74,12 +71,7 @@
             </div>
         </main>
     </div>
-    <footer id="footer">
-        <div class="footer-container">
-            <a href="tel:02-2152-3978" class="footer-link">02) 2152-3978</a>
-            <div class="footer-logo"></div>
-        </div>
-    </footer>
+    {{> footer}}
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>

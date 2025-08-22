@@ -15,10 +15,13 @@
 
 <body>
     <style>
+        body,html{
+            background-color: #fff !important;
+        }
         body{
             padding-top: 3rem;
             font-family: 'ChosunGu';
-            background-color: #fff;
+            background-color: #fff !important;
         }
         table{
             border-collapse: collapse;
@@ -84,65 +87,12 @@
             display: none;
         }
     </style>
-    <h1>엑스퍼트 - 인사이트</h1>
+    <h1>엑스퍼트 - 환영!!!</h1>
     
     <div class="link-page">
         <div class="search-box">
             <input type="text" id="searchInput" placeholder="검색어를 입력하세요">
             <button id="searchButton">검색</button>
-              <script>
-                const shareBtn = document.getElementById('share-btn');
-
-                // OS & 브라우저 감지 함수
-                function detectEnvironment() {
-                const ua = navigator.userAgent.toLowerCase();
-                const isWindows = navigator.platform.startsWith('Win');
-                const isMac = navigator.platform.startsWith('Mac');
-                const isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-                const isChrome = ua.includes('chrome') && !ua.includes('edg');
-                const isEdge = ua.includes('edg');
-                const isFirefox = ua.includes('firefox');
-
-                return { isWindows, isMac, isSafari, isChrome, isEdge, isFirefox };
-                }
-
-                shareBtn.addEventListener('click', async () => {
-                const { isWindows, isMac, isSafari, isChrome, isEdge } = detectEnvironment();
-
-                if (navigator.share) {
-                    try {
-                    await navigator.share({
-                        title: '공유 제목',
-                        text: '공유할 내용',
-                        url: 'https://happybean.naver.com'
-                    });
-                    console.log('공유 성공');
-                    } catch (err) {
-                    console.warn('공유 실패', err);
-                    }
-                } else {
-                    // 환경별 안내
-                    if (isWindows) {
-                    alert('이 브라우저는 공유 기능을 지원하지 않아. Chrome 최신버전이나 모바일 기기에서 시도해봐.');
-                    } else if (isMac && isSafari) {
-                    alert('Safari는 공유 기능을 지원하지만 현재 사용 중인 Safari 버전이 안 맞을 수 있어.');
-                    } else if (isMac && !isSafari) {
-                    alert('macOS에서는 Safari에서만 공유 기능이 제대로 작동해.');
-                    } else {
-                    alert('이 환경에서는 공유 기능을 지원하지 않아.');
-                    }
-
-                    // 복사 대안
-                    const url = 'https://happybean.naver.com';
-                    try {
-                    await navigator.clipboard.writeText(url);
-                    alert('공유할 링크가 클립보드에 복사됐어:\n' + url);
-                    } catch {
-                    alert('링크 복사도 실패했어. 수동으로 복사해:\n' + url);
-                    }
-                }
-                });
-            </script>
         </div>
         <table>
             <thead>

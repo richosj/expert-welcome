@@ -11,14 +11,7 @@
 
 <body>
     <div id="wrap" class="solution-inquiry-page">
-        <!-- 헤더 -->
-        <header class="page-header">
-            <button class="menu-btn"></button>
-            <h1 class="page-title">솔루션문의</h1>
-            <div class="progress-dot"></div>
-        </header>
-        
-        <!-- 메인 컨텐츠 -->
+        {{> header}}
         
         <main class="main-content container">
             <div class="divider">
@@ -33,19 +26,22 @@
                     
                     <!-- 전화번호 입력 필드 -->
                     <div class="form-field">
-                        <input type="tel" class="input-field" value="010-90" placeholder="전화번호를 입력하세요">
+                        <input type="tel" class="input-field" value="010-1001-0100" placeholder="전화번호를 입력하세요">
                     </div>
                     
-                    <!-- 회사명 입력 필드 -->
+                    
                     <div class="form-field">
-                        <input type="text" class="input-field" value="HD 신" placeholder="회사명을 입력하세요">
+                        <div class="select-field courseSelect">
+                            <span class="select-text">HRM 신규솔루션 문의</span>
+                            <div class="arrow-icon"><img src="./assets/images/arw.png" alt=""></div>
+                        </div>
                     </div>
                     
                     <!-- 문의 유형 선택 필드 -->
                     <div class="form-field">
-                        <div class="select-field" id="courseSelect">
+                        <div class="select-field courseSelect">
                             <span class="select-text">HRM 신규솔루션 문의</span>
-                            <div class="arrow-icon">→</div>
+                            <div class="arrow-icon"><img src="./assets/images/arw.png" alt=""></div>
                         </div>
                     </div>
                 </div>
@@ -60,7 +56,7 @@
             <div class="course-selection-content">
                 <!-- 레이어 헤더 -->
                 <div class="layer-header">
-                    <button class="back-btn" id="closeCourseLayer">←</button>
+                    <button class="back-btn" id="closeCourseLayer"><img src="./assets/images/heroicons.png" alt=""></button>
                     <h2 class="layer-title">신규솔루션 과정 선택</h2>
                 </div>
                 
@@ -105,12 +101,77 @@
             </div>
         </div>
     </div>
-    <footer id="footer">
-        <div class="footer-container">
-            <a href="tel:02-2152-3978" class="footer-link">02) 2152-3978</a>
-            <div class="footer-logo"></div>
-        </div>
-    </footer>
+    {{> footer}}
+
+    <script>
+
+        // 과정 선택 레이어 기능
+        document.addEventListener('DOMContentLoaded', function() {
+            const courseSelect = document.querySelectorAll('.courseSelect');
+            const courseLayer = document.getElementById('courseLayer');
+            const closeCourseLayer = document.getElementById('closeCourseLayer');
+            const courseItems = document.querySelectorAll('.course-item');
+            
+            // 과정 선택 필드 클릭 시 레이어 열기
+            if (courseSelect) {
+                courseSelect.forEach(item => {
+                    item.addEventListener('click', function() {
+                    courseLayer.classList.add('active');
+                        item.classList.add('active');
+                    });
+                });
+            }
+            
+            // 뒤로가기 버튼 클릭 시 레이어 닫기
+            if (closeCourseLayer) {
+                closeCourseLayer.addEventListener('click', function() {
+                    courseLayer.classList.remove('active');
+                    courseSelect.classList.remove('active');
+                });
+            }
+            
+            // 레이어 외부 클릭 시 닫기
+            if (courseLayer) {
+                courseLayer.addEventListener('click', function(e) {
+                    if (e.target === courseLayer) {
+                        courseLayer.classList.remove('active');
+                        courseSelect.classList.remove('active');
+                    }
+                });
+            }
+            
+            // 과정 아이템 클릭 시 선택
+            courseItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // 기존 선택 해제
+                    courseItems.forEach(i => i.classList.remove('selected'));
+                    
+                    // 현재 아이템 선택
+                    this.classList.add('selected');
+                    
+                    // 선택된 텍스트를 필드에 표시
+                    const selectText = courseSelect.querySelector('.select-text');
+                    if (selectText) {
+                        selectText.textContent = this.textContent;
+                    }
+                    
+                    // 레이어 닫기
+                    courseLayer.classList.remove('active');
+                    courseSelect.classList.remove('active');
+                });
+            });
+            
+            // ESC 키로 레이어 닫기
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && courseLayer.classList.contains('active')) {
+                    courseLayer.classList.remove('active');
+                    courseSelect.classList.remove('active');
+                }
+            });
+        });
+
+
+    </script>
     <script type="module" src="./js/main.js"></script>
 </body>
 </html>
